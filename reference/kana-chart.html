@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabla de Hiragana</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  table.kana { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  table.kana td, table.kana th { border: 1px solid var(--rule); padding: .5rem; text-align: center; }
+  table.kana th { background: #f5f2e8; font-family: sans-serif; font-size: .85rem; }
+  table.kana .c { font-size: 1.8rem; font-family: "Yu Gothic","Meiryo",sans-serif; }
+  table.kana .r { font-size: .8rem; color: var(--muted); display: block; }
+  tr.learned .c { color: var(--accent); }
+  .legend { font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="home" href="../index.html">← Volver al índice</a>
+  <span>Referencia</span>
+</nav>
+<header class="lesson">
+  <div class="kicker">Referencia · Hiragana</div>
+  <h1>Tabla de Hiragana</h1>
+  <p class="subtitle">Los 46 básicos. Filas = consonante, columnas = vocal (a·i·u·e·o). Rojo = ya lo aprendiste.</p>
+</header>
+
+<table class="kana">
+  <tr><th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th></tr>
+  <tr class="learned"><th>–</th><td class="c">あ<span class="r">a</span></td><td class="c">い<span class="r">i</span></td><td class="c">う<span class="r">u</span></td><td class="c">え<span class="r">e</span></td><td class="c">お<span class="r">o</span></td></tr>
+  <tr class="learned"><th>k</th><td class="c">か<span class="r">ka</span></td><td class="c">き<span class="r">ki</span></td><td class="c">く<span class="r">ku</span></td><td class="c">け<span class="r">ke</span></td><td class="c">こ<span class="r">ko</span></td></tr>
+  <tr><th>s</th><td class="c">さ<span class="r">sa</span></td><td class="c">し<span class="r">shi</span></td><td class="c">す<span class="r">su</span></td><td class="c">せ<span class="r">se</span></td><td class="c">そ<span class="r">so</span></td></tr>
+  <tr><th>t</th><td class="c">た<span class="r">ta</span></td><td class="c">ち<span class="r">chi</span></td><td class="c">つ<span class="r">tsu</span></td><td class="c">て<span class="r">te</span></td><td class="c">と<span class="r">to</span></td></tr>
+  <tr><th>n</th><td class="c">な<span class="r">na</span></td><td class="c">に<span class="r">ni</span></td><td class="c">ぬ<span class="r">nu</span></td><td class="c">ね<span class="r">ne</span></td><td class="c">の<span class="r">no</span></td></tr>
+  <tr><th>h</th><td class="c">は<span class="r">ha</span></td><td class="c">ひ<span class="r">hi</span></td><td class="c">ふ<span class="r">fu</span></td><td class="c">へ<span class="r">he</span></td><td class="c">ほ<span class="r">ho</span></td></tr>
+  <tr><th>m</th><td class="c">ま<span class="r">ma</span></td><td class="c">み<span class="r">mi</span></td><td class="c">む<span class="r">mu</span></td><td class="c">め<span class="r">me</span></td><td class="c">も<span class="r">mo</span></td></tr>
+  <tr><th>y</th><td class="c">や<span class="r">ya</span></td><td></td><td class="c">ゆ<span class="r">yu</span></td><td></td><td class="c">よ<span class="r">yo</span></td></tr>
+  <tr><th>r</th><td class="c">ら<span class="r">ra</span></td><td class="c">り<span class="r">ri</span></td><td class="c">る<span class="r">ru</span></td><td class="c">れ<span class="r">re</span></td><td class="c">ろ<span class="r">ro</span></td></tr>
+  <tr><th>w</th><td class="c">わ<span class="r">wa</span></td><td></td><td></td><td></td><td class="c">を<span class="r">wo</span></td></tr>
+  <tr><th>n</th><td class="c">ん<span class="r">n</span></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<p class="legend">Fuente: <a href="https://www.tofugu.com/japanese/learn-hiragana/">Tofugu — Learn Hiragana</a>.
+A medida que completes lecciones, más filas se ponen en rojo.</p>
+
+<footer><p>Documento de referencia · Volver a la <a href="../lessons/0001-las-cinco-vocales.html">Lección 1</a>.</p></footer>
+</body>
+</html>

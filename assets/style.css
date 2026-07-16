@@ -1,0 +1,75 @@
+/* Shared stylesheet for all Japanese lessons. Tufte-inspired: calm, readable, print-friendly. */
+:root {
+  --ink: #1a1a1a;
+  --paper: #fdfcf8;
+  --accent: #a23b2e;      /* vermilion — Japanese seal red */
+  --muted: #6b6b6b;
+  --rule: #e0ddd3;
+  --good: #2e7d32;
+  --bad: #b23b2e;
+  --serif: Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--paper);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  line-height: 1.6;
+  font-size: 18px;
+}
+header.lesson { border-bottom: 2px solid var(--accent); padding-bottom: .8rem; margin-bottom: 1.5rem; }
+.kicker { text-transform: uppercase; letter-spacing: .15em; font-size: .72rem; color: var(--accent); font-family: sans-serif; }
+h1 { font-size: 1.9rem; line-height: 1.15; margin: .2rem 0 .3rem; }
+h2 { font-size: 1.25rem; margin-top: 2rem; border-bottom: 1px solid var(--rule); padding-bottom: .2rem; }
+.subtitle { color: var(--muted); font-style: italic; }
+.jp { font-family: "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; }
+.big-kana { font-size: 3rem; line-height: 1; }
+
+/* Kana grid */
+.kana-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.kana-card { border: 1px solid var(--rule); border-radius: 8px; padding: 1rem; text-align: center; background: #fff; }
+.kana-card .char { font-size: 3.2rem; line-height: 1; font-family: "Yu Gothic","Meiryo",sans-serif; }
+.kana-card .romaji { font-size: 1.4rem; color: var(--accent); margin-top: .3rem; }
+.kana-card .mnemonic { font-size: .85rem; color: var(--muted); margin-top: .5rem; font-style: italic; }
+
+/* Quiz widget */
+.quiz { border: 1px solid var(--rule); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; background: #fff; }
+.quiz .prompt { font-size: 2.6rem; text-align: center; font-family: "Yu Gothic","Meiryo",sans-serif; margin-bottom: 1rem; }
+.quiz .options { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+.quiz button.opt { font-family: sans-serif; font-size: 1.1rem; padding: .7rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); cursor: pointer; transition: background .15s; }
+.quiz button.opt:hover { background: #f2efe6; }
+.quiz button.opt.correct { background: var(--good); color: #fff; border-color: var(--good); }
+.quiz button.opt.wrong { background: var(--bad); color: #fff; border-color: var(--bad); }
+.quiz .feedback { margin-top: 1rem; text-align: center; min-height: 1.5rem; font-weight: bold; }
+.quiz .score { text-align: center; color: var(--muted); font-family: sans-serif; font-size: .9rem; margin-top: .5rem; }
+
+/* Navegación superior */
+nav.topnav { display: flex; justify-content: space-between; align-items: center; font-family: sans-serif; font-size: .85rem; margin-bottom: 1rem; }
+nav.topnav a { text-decoration: none; }
+nav.topnav .home { font-weight: bold; }
+
+/* Barra de progreso del curso */
+.progress { font-family: sans-serif; margin: 1rem 0 1.5rem; }
+.progress .label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+.progress .track { background: var(--rule); border-radius: 999px; height: 10px; overflow: hidden; margin-top: .3rem; }
+.progress .fill { background: var(--accent); height: 100%; border-radius: 999px; transition: width .4s; }
+
+/* Índice de lecciones */
+.lesson-list { list-style: none; padding: 0; }
+.lesson-list li { border: 1px solid var(--rule); border-radius: 8px; margin-bottom: .8rem; background: #fff; }
+.lesson-list a { display: block; padding: 1rem 1.2rem; text-decoration: none; color: var(--ink); }
+.lesson-list a:hover { background: #f5f2e8; }
+.lesson-list .num { color: var(--accent); font-family: sans-serif; font-weight: bold; font-size: .8rem; }
+.lesson-list .title { font-size: 1.15rem; display: block; }
+.lesson-list .desc { color: var(--muted); font-size: .9rem; }
+.lesson-list li.locked { opacity: .5; }
+.lesson-list li.locked a { cursor: default; }
+
+.callout { background: #f5f2e8; border-left: 3px solid var(--accent); padding: .8rem 1rem; margin: 1.5rem 0; font-size: .95rem; }
+.source { font-size: .9rem; }
+a { color: var(--accent); }
+footer { margin-top: 3rem; border-top: 1px solid var(--rule); padding-top: 1rem; font-size: .85rem; color: var(--muted); }
+@media print { body { font-size: 12pt; } .quiz button.opt { border: 1px solid #999; } }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aprende Japonés</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="lesson">
+  <div class="kicker">Curso · 日本語</div>
+  <h1>Aprende Japonés 🇯🇵</h1>
+  <p class="subtitle">Un reto personal, en sesiones de 5–10 minutos. Metas: sostener una conversación y escribir cartas.</p>
+</header>
+
+<div class="progress" id="course-progress"></div>
+
+<div id="units"></div>
+
+<div class="callout">
+  <strong>¿Cómo funciona?</strong> Cada lección es una victoria pequeña que se
+  apoya en la anterior. Trabajamos las tres destrezas —escribir, entender y
+  hablar— desde el principio. Puedes preguntarme cualquier cosa: soy tu profesor.
+</div>
+
+<h2>Referencia</h2>
+<ul class="lesson-list">
+  <li><a href="reference/kana-chart.html"><span class="num">REF</span><span class="title">Tabla de Hiragana</span><span class="desc">Los 46 kana básicos. Los que ya sabes aparecen en rojo.</span></a></li>
+</ul>
+
+<footer>
+  <p>Fuente principal: <a href="https://www.tofugu.com/japanese/learn-hiragana/">Tofugu — Learn Hiragana</a>.
+  Comunidad recomendada: <a href="https://www.reddit.com/r/LearnJapanese/">r/LearnJapanese</a>.</p>
+</footer>
+
+<script src="assets/course.js"></script>
+<script>
+  window.COURSE.renderProgress(document.getElementById('course-progress'));
+  var cont = document.getElementById('units');
+  window.COURSE.units.forEach(function (u) {
+    var h = document.createElement('h2');
+    h.innerHTML = 'Unidad ' + u.unit + ' · ' + u.name +
+      ' <span class="desc" style="font-weight:normal;color:var(--muted);font-size:.85rem;">— ' + u.goal + '</span>';
+    cont.appendChild(h);
+    var ul = document.createElement('ul');
+    ul.className = 'lesson-list';
+    u.lessons.forEach(function (l) {
+      var li = document.createElement('li');
+      var locked = l.status === 'locked';
+      if (locked) li.className = 'locked';
+      var href = locked ? '#' : l.file;
+      var tag = l.status === 'next' ? ' · ▶ SIGUIENTE' : (locked ? ' · 🔒' : '');
+      li.innerHTML = '<a href="' + href + '"' + (locked ? ' onclick="return false"' : '') + '>' +
+        '<span class="num">LECCIÓN ' + l.n + tag + '</span>' +
+        '<span class="title">' + l.title + '</span>' +
+        '<span class="desc">' + l.desc + '</span></a>';
+      ul.appendChild(li);
+    });
+    cont.appendChild(ul);
+  });
+</script>
+</body>
+</html>
