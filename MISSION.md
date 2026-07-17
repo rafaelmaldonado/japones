@@ -34,3 +34,9 @@ Las tres destrezas —escribir, entender y hablar— cuentan por igual.
 Es un camino de decenas de lecciones, no unas pocas; se irá ampliando.
 
 _Última actualización: 2026-07-16_
+
+## Progreso (hub)
+El landing (`learning/index.html`) calcula el avance de este curso como
+**lecciones en `lessons/` ÷ total planeado**, contadas en vivo vía la GitHub API.
+Cada archivo `lessons/NNNN-*.html` que construyas sube la barra automáticamente.
+- **Total planeado:** 60 lecciones (estimado; ajústalo aquí y en `PROJECTS[].total` del hub si cambia el plan).
